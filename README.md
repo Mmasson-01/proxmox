@@ -66,3 +66,15 @@ Now we need to make available the local storage unit.
 ...
 
 
+# Debian
+
+1. install the bareminimum (SSH server and utils, no desktop environment por favor)
+2. login as root
+3. run the following:
+
+```bash
+apt update
+apt upgrade
+apt install sudo curl
+usermod -aG sudo <user>
+```
