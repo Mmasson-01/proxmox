@@ -1,0 +1,12 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: example-runnerdeploy # Runner name
+spec:
+  replicas: 1
+  template:
+    spec:
+      # repository: thefriser/tf-kubernetes
+      organization: starstruckcreative
+      # labels:
+      #   - thefriser-k8s # Label to reference in your workflow
