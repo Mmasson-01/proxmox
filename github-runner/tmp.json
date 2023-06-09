@@ -1,0 +1,57 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2023-04-06T12:27:15Z",
+        "deletionTimestamp": "2023-05-19T19:03:58Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "actions-runner-system",
+            "name": "actions-runner-system"
+        },
+        "name": "actions-runner-system",
+        "resourceVersion": "4431601",
+        "uid": "4113a1ce-0c52-43b3-a014-56e761f5fc4b"
+    },
+    "spec": {
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2023-05-19T19:05:48Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T19:05:48Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T19:05:48Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T19:05:48Z",
+                "message": "Some resources are remaining: runners.actions.summerwind.dev has 2 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T19:05:48Z",
+                "message": "Some content in the namespace has finalizers remaining: runner.actions.summerwind.dev in 2 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
