@@ -1,0 +1,14 @@
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-secret-credentials
+  labels:
+    app: mysqldb
+data:
+  MYSQL_ROOT_PASSWORD: password
+  MYSQL_DATABASE: craft
+  MYSQL_USER: craft
+  MYSQL_PASSWORD: craft
+---
+

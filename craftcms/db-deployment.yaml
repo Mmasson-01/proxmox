@@ -1,0 +1,42 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: mysqldb
+  namespace: mysql
+  labels:
+    app: mysqldb
+spec:
+  replicas: 1
+  serviceName: mysqldb
+  selector:
+    matchLabels:
+      app: mysqldb
+  template:
+    metadata:
+      labels:
+        app: mysqldb
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: mysqldb
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - configMapRef:
+                name: mysql-secret-credentials
+          volumeMounts:
+          - mountPath: /var/lib/mysql
+            name: mysql-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql-pvc
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: local-storage
+---
