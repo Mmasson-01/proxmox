@@ -6,13 +6,13 @@ metadata:
     app: mysqldb
 spec:
   capacity:
-    storage: 10Gi
+    storage: 20Gi
   accessModes:
   - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /data/volumes/craftcms-mysql-pv
+    path: /data/volumes/mysql-pv
   nodeAffinity:
     required:
       nodeSelectorTerms:

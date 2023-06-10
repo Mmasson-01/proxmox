@@ -7,8 +7,5 @@ metadata:
     app: mysqldb
 data:
   MYSQL_ROOT_PASSWORD: password
-  MYSQL_DATABASE: craft
-  MYSQL_USER: craft
-  MYSQL_PASSWORD: craft
 ---
 

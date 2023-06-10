@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysqldb
-  namespace: craftcms
+  namespace: database
   labels:
     app: mysqldb
 spec:
@@ -37,6 +37,6 @@ spec:
         - ReadWriteMany
       resources:
         requests:
-          storage: 10Gi
+          storage: 20Gi
       storageClassName: local-storage
 ---

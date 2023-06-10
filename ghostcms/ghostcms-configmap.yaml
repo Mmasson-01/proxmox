@@ -1,0 +1,18 @@
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ghostcms-secrets
+  labels:
+    app: ghostcms-deployment
+data:
+  database__client: mysql
+  database__connection__host: mysql-service.database.svc.cluster.local
+  database__connection__user: root
+  database__connection__password: password
+  database__connection__database: ghost
+  url: https://ghost.starstruckcreative.com
+  NODE_ENV: production
+---
+
+

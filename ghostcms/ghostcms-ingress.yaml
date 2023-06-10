@@ -1,0 +1,25 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ghostcms-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  ingressClassName: nginx
+  tls:
+    - secretName:  ghostcms-staging-tls
+      hosts:
+        - ghost.starstruckcreative.com
+  rules:
+    - host: ghost.starstruckcreative.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ghostcms-service
+                port:
+                  number: 80
+
