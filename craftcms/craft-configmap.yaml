@@ -1,0 +1,25 @@
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: craft-secrets
+  labels:
+    app: craft-deployment
+data:
+  CRAFT_APP_ID: toto1324 
+  CRAFT_ENVIRONMENT: development
+  CRAFT_SECURITY_KEY: 123456789asddfgk
+  CRAFT_DB_DRIVER: mysql
+  CRAFT_DB_SERVER: mysql-service
+  CRAFT_DB_PORT: "3306"
+  CRAFT_DB_DATABASE: craft
+  CRAFT_DB_USER: craft
+  CRAFT_DB_PASSWORD: craft
+  CRAFT_DB_SCHEMA: public
+  DEV_MODE: "true"
+  ALLOW_ADMIN_CHANGES: "true"
+  DISALLOW_ROBOTS: "true"
+  PRIMARY_SITE_URL: https://craft.starstruckcreative.com
+---
+
+

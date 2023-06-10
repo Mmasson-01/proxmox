@@ -1,0 +1,25 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: craft-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  ingressClassName: nginx
+  tls:
+    - secretName:  craft-staging-tls
+      hosts:
+        - craft.starstruckcreative.com
+  rules:
+    - host: craft.starstruckcreative.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: craft-service
+                port:
+                  number: 8080
+

@@ -1,0 +1,4 @@
+.env*
+.ddev
+vendor
+storage

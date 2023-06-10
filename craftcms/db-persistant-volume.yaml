@@ -8,11 +8,11 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   local:
-    path: /data/volumes/mysql-pv
+    path: /data/volumes/craftcms-mysql-pv
   nodeAffinity:
     required:
       nodeSelectorTerms:
