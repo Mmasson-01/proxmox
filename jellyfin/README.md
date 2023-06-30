@@ -17,3 +17,11 @@ helm show values utkuozdemir/jellyfin > values.yml
 ```bash
 helm install my-release utkuozdemir/jellyfin
 ```
+
+## Persistent Volume
+
+First create 2 persistent volume for Config and Data.
+
+```bash
+kubectl apply -f pv.yml
+```
