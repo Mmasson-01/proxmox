@@ -31,11 +31,11 @@ additionalServicePorts: []
 
 image:
   # -- Image repository
-  repository: docker.io/linuxserver/jellyfin
+  repository: jellyfin/jellyfin
   # -- Image pull policy
   pullPolicy: IfNotPresent
   # -- Image tag (if not specified, defaults to the chart's appVersion)
-  tag: ""
+  tag: "10.8.8"
 
 # -- Image pull secrets
 imagePullSecrets: []
@@ -92,9 +92,9 @@ ingress:
           pathType: ImplementationSpecific
   # -- The TLS configuration for the Ingress
   tls:
-    - secretName: jelly-staging-tls
-      hosts:
-        - jelly.starstruckcreative.com
+    # - secretName: jelly-staging-tls
+    #   hosts:
+    #     - jelly.starstruckcreative.com
 
 
 # -- The resource requests and limits of the container
