@@ -3,7 +3,7 @@
 1. Create a namespace
 
 ```bash
-k create ns metallb
+k create ns metallb-system
 ```
 
 2. Move to the namespace
@@ -15,7 +15,7 @@ kn metallb
 3. Install the metallb manifest
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.9/config/manifests/metallb-native.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.10/config/manifests/metallb-native.yaml
 ```
 
 4. Apply the configurations

@@ -29,7 +29,7 @@ metadata:
   name: jellyfin-data-pv
 spec:
   capacity:
-    storage: 64Gi
+    storage: 100Gi
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain

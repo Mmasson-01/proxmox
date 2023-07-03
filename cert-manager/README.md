@@ -16,11 +16,11 @@ helm repo update
 3. Install the helm repo
 
 ```bash
-helm install \                                                          ✔  kubernetes-admin@kubernetes/cert-manager ⎈  07:35:26  ▓▒░
+helm install \
   cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --create-namespace \
-  --version v1.11.0 \
+  --version v1.12.2 \
   --set installCRDs=true \
   --set prometheus.enabled=false
 ```

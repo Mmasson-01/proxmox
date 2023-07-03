@@ -12,12 +12,6 @@ helm repo add utkuozdemir https://utkuozdemir.org/helm-charts
 helm show values utkuozdemir/jellyfin > values.yml
 ```
 
-## Install the chart built-in
-
-```bash
-helm install my-release utkuozdemir/jellyfin
-```
-
 ## Persistent Volume
 
 First create 2 persistent volume for Config and Data.
@@ -25,3 +19,10 @@ First create 2 persistent volume for Config and Data.
 ```bash
 kubectl apply -f pv.yml
 ```
+
+## Install the chart built-in
+
+```bash
+helm install jellyfin utkuozdemir/jellyfin
+```
+
